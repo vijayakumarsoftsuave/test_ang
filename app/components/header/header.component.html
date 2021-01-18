@@ -1,0 +1,23 @@
+
+<!--{{$ctrl.componentName}}-->
+<!---->
+
+<!--{{$ctrl.users}}-->
+<table>
+    <th>No</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Age</th>
+    <th>City</th>
+
+    <tr ng-repeat="user in $ctrl.users track by $index">
+        <td>{{$index+1}}</td>
+        <td>{{ (user.gender === 'male' ? 'Mr.' : 'Mrs' )+user.name}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.city}}</td>
+    </tr>
+
+</table>

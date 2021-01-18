@@ -1,0 +1,67 @@
+<!--{{$ctrl.res}}-->
+<br>
+<!--<div class="md-form mt-0">-->
+<!--    <input class="form-control" type="text" placeholder="Search" aria-label="Search">-->
+<!--</div>-->
+<h5>Cricket API's</h5>
+{{res}}
+
+<!--<div ng-show="oninit()">-->
+<!--    Shown item 1-->
+<!--</div>-->
+
+<!--<input type="text" class="form-control col-12" placeholder="Search Team" ng-model="searchID">-->
+<br><br><br>
+<div class="form-inline ">
+<div class="form-group mx-sm-3 mb-2">
+    <input type="search" ng-model="player" class="form-control" placeholder="Search Player" ng-keyup="search($event)" >
+
+    <button class="btn btn-primary mb-0"  ng-click="getUser()">search</button>
+
+
+</div>
+    <div ng-if="loading">Loading...</div>
+</div>
+
+<!--<div ng-repeat="recommendedPlayer in recommendedPlayersList">-->
+<!--    <player-component player="recommendedPlayer"></player-component>-->
+<!--</div>-->
+
+
+
+<div ng-repeat="playerObject in players">
+
+<!--    make a player component-->
+<player-component player="playerObject"></player-component>
+
+</div>
+
+<!--<div ng-show="query" ng-repeat="user in query">-->
+
+<!--     <h5>ID : {{user.unique_id}}</h5>-->
+<!--    <h5>Title :{{user.title}}</h5>-->
+<!--    <h5>Description : {{user.description}}</h5>-->
+<!--</div>-->
+
+
+<!--<div class="card"-->
+<!--     style="background: #f5f5f5; display: none"-->
+<!--     ng-repeat="x in $ctrl.res track by $index"-->
+<!--     ng-click=""changeClass>-->
+<!--    &lt;!&ndash;    <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1280px-Flag_of_Australia_%28converted%29.svg.png" style="width: 70px;height: 70px;margin: 0 auto; float: right" alt="Card image cap">&ndash;&gt;-->
+<!--    <div class="card-body">-->
+<!--        <h6 class="index">{{$index + 1}}</h6>-->
+<!--        <h6 class="card-title green">ID : {{x.unique_id}}</h6>-->
+<!--        <h6 class="card-title">{{x.title}}</h6>-->
+<!--        <p class="card-text">{{x.description}}</p>-->
+<!--        <button-->
+<!--                class="btn btn-primary"-->
+<!--                ng-class="{'recommended' : x.recommended,'unrecommended' : !x.recommended}"-->
+<!--                ng-click="getUser(x)">-->
+<!--                    {{x.recommended ? "UnRecommend" : "Recommend" }}-->
+<!--        </button>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--{{$ctrl.xy.unique_id}}-->

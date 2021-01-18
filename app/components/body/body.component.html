@@ -1,0 +1,38 @@
+<div class="sideNav">
+    <div class="ul">
+        <h3>CPlayer</h3>
+        <ul>
+            <li ng-click="openHomePage()">Home</li>
+            <li ng-click="openRecommendPage()">Recommend</li>
+<!--            <a href="#!recommend">Recommend</a>-->
+        </ul>
+    </div>
+</div>
+<div class="divContent">
+    <header>
+        <div class="logo">
+        </div>
+    </header>
+
+    <div ng-if="homePage">
+        <dashboard-component></dashboard-component>
+    </div>
+    <div ng-if="recommendPage">
+        <recommend-component></recommend-component>
+    </div>
+<!--    {{ $ctrl.recommendePlayers}}-->
+
+<!--    <div ng-repeat="res in recommendePlayers">-->
+<!--        <div class="card">-->
+<!--            <div class="card-body">-->
+<!--                <h5>{{res.fullName}}</h5>-->
+
+<!--            </div>-->
+<!--&lt;!&ndash;        {{recommendePlayer}}&ndash;&gt;-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+
+</div>
+

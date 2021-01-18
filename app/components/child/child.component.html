@@ -1,0 +1,71 @@
+<!--<h4>Loaded Child Component</h4>-->
+
+<!--{{$ctrl.data}}-->
+<!--{{$ctrl.message}}-->
+
+<!--<h3>Two way Binding</h3>-->
+<!--{{$ctrl.data}}-->
+<!--First Name :-->
+<!--<input type="text" ng-model="$ctrl.data.fname"  />-->
+<!--<br>-->
+<!--Lat name :-->
+<!--<input type="text" ng-model="$ctrl.data.lname"  />-->
+<!--<br>-->
+<!--Email ID :-->
+<!--<input type="text" ng-model="$ctrl.data.email"  />-->
+
+<!--TWO WAY BINDINGS-->
+
+<!--<table class="table">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th scope="col">#</th>-->
+<!--        <th scope="col">First Name</th>-->
+<!--        <th scope="col">Last Name</th>-->
+<!--        <th scope="col">Email</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr>-->
+<!--        <th scope="row">1</th>-->
+<!--        <td>{{$ctrl.data.fname}}</td>-->
+<!--        <td>{{$ctrl.data.lname}}</td>-->
+<!--        <td>{{$ctrl.data.email}}</td>-->
+<!--    </tr>-->
+
+<!--    </tbody>-->
+<!--</table>-->
+
+<input type="text" ng-model="text" ng-model-options="{ updateOn: 'blur', debounce: {default : 5000, blur : 1}}">
+{{text}}
+
+
+<!--NG REPEAT AND FILTERS-->
+Filter : <input type="number" ng-model="rowfilter" max="50" min="1" placeholder="0">
+Filter By:
+<select ng-options="item as item.label for item in items track by item.id" ng-model="selected"></select>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col" ng-click="changeSortOrder($ctrl.data.fname)" >First Name <span></span></th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">DOB</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="x in $ctrl.data | limitTo:rowfilter | orderBy: name ">
+        <th scope="row">{{$index+1}}</th>
+        <td>{{x.fname}}</td>
+        <td>{{x.lname}}</td>
+        <td>{{x.email}}</td>
+        <td>{{x.dob | date: "dd-MM-yyyy"}}</td>
+        <td ng-class="{'red' : x.gender === 'male','green' : x.gender === 'Female'}">{{x.gender.substring(0,1).toUpperCase()+x.gender.substring(1)}}</td>
+        <td>{{x.value | currency:'Rs. ':1}}</td>
+    </tr>
+
+    </tbody>
+</table>

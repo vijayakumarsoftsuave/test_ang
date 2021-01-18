@@ -1,0 +1,29 @@
+<!--<div class="w3-card-1">-->
+<!--    <div class="w3-container w3-center">-->
+<!--        <p>{{$ctrl.player.fullName}}</p>-->
+<!--        <button>Recommend</button>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+
+<div class="card"
+     style="background: #f5f5f5;" >
+    <div class="card-body">
+        <img style="width:100px; height: 100px;" src="{{$ctrl.player.playerBio.imageURL}}">
+        <h6>Name : {{$ctrl.player.name}}</h6>
+        <p> Full name : {{$ctrl.player.fullName}}</p>
+
+
+
+        <button
+                class="btn btn-primary btn-sm"
+                ng-click="recommendedUser($ctrl.player)"
+                ng-class="{'recommended' : $ctrl.player.recommend,'unrecommended' : !$ctrl.player.recommend}">
+                     {{$ctrl.player.recommend ? "Un Recommend" : "Recommend" }}
+        </button>
+<!--        {{$ctrl.uid}}-->
+
+    </div>
+</div>
